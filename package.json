@@ -4,7 +4,7 @@
     "request": "*",
     "lodash": "*"
   },
-  "name": "node-noun-project",
+  "name": "nounproject",
   "version": "0.0.0",
   "description": "Noun Project ============",
   "main": "index.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/psirenny/node-noun-project.git"
+    "url": "https://github.com/psirenny/nounproject.git"
   },
   "keywords": [
     "noun",
@@ -31,6 +31,6 @@
   },
   "devDependencies": {},
   "bugs": {
-    "url": "https://github.com/psirenny/node-noun-project/issues"
+    "url": "https://github.com/psirenny/nounproject/issues"
   }
 }

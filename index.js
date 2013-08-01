@@ -2,14 +2,10 @@ var _ = require('lodash')
   , cheerio = require('cheerio')
   , request = require('request');
 
-module.exports = function (settings) {
-  settings = _.defaults(settings || {}, {
-
-  });
-
+module.exports = function () {
   return {
     search: function (options) {
-      settings = _.defaults(options || {}, {
+      options = _.defaults(options || {}, {
 
       });
     }
