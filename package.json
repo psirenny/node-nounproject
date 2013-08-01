@@ -1,17 +1,36 @@
 {
+  "dependencies": {
+    "cheerio": "*",
+    "request": "*",
+    "lodash": "*"
+  },
   "name": "node-noun-project",
   "version": "0.0.0",
-  "description": "",
+  "description": "Noun Project ============",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psirenny/node-noun-project.git"
+  },
   "keywords": [
     "noun",
     "project",
     "icon"
   ],
   "author": "psirenny",
-  "license": "BSD"
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "00fde4decd2338cc203121f2622f26f6d53d3a4d",
+  "dependencies": {
+    "cheerio": "~0.12.1",
+    "lodash": "~1.3.1",
+    "request": "~2.25.0"
+  },
+  "devDependencies": {},
+  "bugs": {
+    "url": "https://github.com/psirenny/node-noun-project/issues"
+  }
 }
