@@ -26,6 +26,27 @@ exports.collections = function (options, callback) {
   });
 };
 
+exports.icon = function (option, callback) {
+  if (!options.id) return callback('id required');
+  if (!options.noun) return callback('noun required');
+
+  request(exports.url(options) + '/noun/' + options.name + '#icon-No' + options.id, function (err, res, body) {
+    // implement
+  });
+};
+
+exports.named = function (options, callback) {
+  if (!options.name) return callback('name required');
+
+  request(exports.url(options) + '/noun/' + options.name, function (err, res, body) {
+    if (err) return callback(err);
+    var $ = cheerio.load(body);
+    $('#other-icons .uploadYourOwn').remove();
+    var ids = $('#other-icons li.icon').map(function (i, el) { return $(el).attr('id').match(/otherIcon-(\d+)/)[1]; });
+    callback(null, ids);
+  });
+};
+
 exports.search = function (options, callback) {
   if (!options.query) return callback('query required');
 
@@ -52,19 +73,13 @@ exports.search = function (options, callback) {
   });
 };
 
-exports.tags = function (options, callback) {
+exports.tagged = function (options, callback) {
   if (!options.tag) return callback('tag required');
 
-  request(this.url(options) + '/tag/' + options.tag, function (err, res, body) {
+  request(exports.url(options) + '/tag/' + options.tag, function (err, res, body) {
     if (err) return callback(err);
     var $ = cheerio.load(body);
-    var tags = $('#tags h5 a').map(function (i, el) {
-      return {
-        id: $(el).attr('href').match(/-No(\d+)/)[1],
-        name: $(el).text()
-      }
-    });
-    callback(null, tags);
+    callback(null, $('#tags h5 a').map(function (i, el) { return $(el).text(); }));
   });
 };
 
